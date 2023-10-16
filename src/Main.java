@@ -4,15 +4,15 @@ public class Main {
     public static void main(String[] args) {
         writeLine();
         System.out.println("Задание 1");
-        task1();
+        madeMethodTask1(generateRandomNumber());
         writeLine();
 
         System.out.println("Задание 2");
-        task2();
+        madeMethodTask2(generateRandomNumberOS(),generateRandomDateRelease());
         writeLine();
 
         System.out.println("Задание 3");
-        task3();
+        madeMethodTask3(generateRandomNumberForTask3());
         writeLine();
     }
 
@@ -36,36 +36,35 @@ public class Main {
 
     public static int generateRandomNumberOS() {
         Random rand = new Random();
-        int year = rand.nextInt(0,2);
-        return year;
+        int OS = rand.nextInt(0,2);
+        return OS;
     }
 
-    public static void task3() {
-        var deliveryDistance = generateRandomNumberForTask3();
-        var deliveryDay = 1;
-        if (deliveryDistance <= 20) {
+    public static void madeMethodTask3(int deliveryDistance) {
+        deliveryDistance = generateRandomNumberForTask3();
+        int deliveryDay = 1;
+        if (deliveryDistance <= 20 && deliveryDistance > 0) {
             System.out.println("Потребуется дней: " + deliveryDay);
-        } else if (deliveryDistance > 20) {
-            System.out.println("Потребуется дней: " + deliveryDay);
-        } else if (20 > deliveryDistance || deliveryDistance <= 60){
+        } else if (20 < deliveryDistance && deliveryDistance <= 60){
             deliveryDay = deliveryDay + 1;
             System.out.println("Потребуется дней: " + deliveryDay);
-        } else if (60 > deliveryDistance || deliveryDistance <= 100) {
+        } else if (60 < deliveryDistance && deliveryDistance <= 100) {
             deliveryDay = deliveryDay + 2;
             System.out.println("Потребуется дней: " + deliveryDay);
         } else if (deliveryDistance > 100) {
             System.out.println("Доставки нет");
         }
+        System.out.println(deliveryDistance + " <== для проверки");
     }
     public static int generateRandomNumberForTask3() {
         Random rand = new Random();
-        int distance = rand.nextInt(0,200);
+        int distance = rand.nextInt(1,150);
         return distance;
     }
 
-    public static void task2() {
-        var OS = generateRandomNumberOS();
-        var releaseDate = generateRandomDateRelease();
+    public static void madeMethodTask2(int OS, int releaseDate) {
+        OS = generateRandomNumberOS();
+        releaseDate = generateRandomDateRelease();
         if (OS == 1 && releaseDate > 2015) {
             System.out.println("Установите версию приложения для Android по ссылке");
         } else if (OS == 1 && releaseDate <= 2015) {
@@ -78,8 +77,8 @@ public class Main {
         System.out.println(OS + " " + releaseDate + " <== версия и дата выхода для проверки кода");
     }
 
-    public static void task1() {
-        int year = generateRandomNumber();
+    public static void madeMethodTask1(int year) {
+        year = generateRandomNumber();
         if (year % 4 == 0 && year % 100 != 0) {
             System.out.println(year + " год являеться високосным");
         } else if ((year % 4 == 0 && year % 100 == 0) && (year % 400 == 0)) {
