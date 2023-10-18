@@ -4,15 +4,15 @@ public class Main {
     public static void main(String[] args) {
         writeLine();
         System.out.println("Задание 1");
-        madeMethodTask1(generateRandomNumber(1904));
+        printMessageIfYearLeap(1904);
         writeLine();
 
         System.out.println("Задание 2");
-        madeMethodTask2(generateRandomNumberOS(0),generateRandomDateRelease(2008));
+        madeMethodTask2(0,2008);
         writeLine();
 
         System.out.println("Задание 3");
-        madeMethodTask3(generateRandomNumberForTask3(65));
+        madeMethodTask3(65);
         writeLine();
     }
 
