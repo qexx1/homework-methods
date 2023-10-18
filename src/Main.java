@@ -69,7 +69,7 @@ public class Main {
         System.out.println(OS + " " + releaseDate + " <== версия и дата выхода для проверки кода");
     }
 
-    public static void madeMethodTask1(int year) {
+    public static void printMessageIfYearLeap(int year) {
         year = generateRandomNumber(year);
         if (year % 4 == 0 && year % 100 != 0) {
             System.out.println(year + " год являеться високосным");
